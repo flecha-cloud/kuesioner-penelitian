@@ -90,3 +90,15 @@
 @keyframes check-pop{0%{transform:scale(0) rotate(-30deg)}75%{transform:scale(1.18) rotate(8deg)}100%{transform:scale(1) rotate(0)}}
 @media(max-width:420px){.stage-character{width:min(88vw,350px);height:min(48vh,300px)}.celebration-character{height:min(48vh,300px)}.page-illustration{min-height:98px}.page-illustration img{height:94px;width:158px}.success-art.success-scene{height:190px}}
 @media(prefers-reduced-motion:reduce){.stage-character img,.page-illustration img,.success-illustration{animation:none!important}}
+
+/* Modern smooth motion refinement */
+.stage-character img,.welcome-character img,.page-illustration img,.success-illustration{will-change:transform;backface-visibility:hidden;transform-origin:50% 80%;}
+.welcome-character img{animation:modern-float 4.8s cubic-bezier(.42,0,.58,1) infinite!important;}
+.stage-character img{animation:modern-float 5s cubic-bezier(.42,0,.58,1) infinite!important;}
+.page-illustration img{animation:modern-sway 5.4s cubic-bezier(.42,0,.58,1) infinite!important;}
+.celebration-character img,.success-illustration{animation:modern-celebrate 1.65s cubic-bezier(.34,1.45,.64,1) infinite!important;}
+.stage-confetti i,.celebration-confetti i{animation-timing-function:cubic-bezier(.22,.61,.36,1)!important;}
+@keyframes modern-float{0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}50%{transform:translate3d(0,-11px,0) rotate(1.2deg)}}
+@keyframes modern-sway{0%,100%{transform:translate3d(0,2px,0) rotate(-.5deg)}50%{transform:translate3d(0,-5px,0) rotate(.6deg)}}
+@keyframes modern-celebrate{0%,100%{transform:translate3d(0,5px,0) rotate(-1deg) scale(.99)}45%{transform:translate3d(0,-13px,0) rotate(1.2deg) scale(1.025)}70%{transform:translate3d(0,-8px,0) rotate(-.5deg) scale(1.01)}}
+@media(prefers-reduced-motion:reduce){.stage-character img,.welcome-character img,.page-illustration img,.success-illustration{animation:none!important;will-change:auto}}
