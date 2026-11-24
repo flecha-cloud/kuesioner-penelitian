@@ -1,0 +1,10 @@
+{
+  "name": "kuesioner-penelitian",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website kuesioner penelitian dengan penyimpanan Netlify Forms dan ekspor Excel.",
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "sharp": "^0.33.5"
+  }
+}
