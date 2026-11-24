@@ -27,13 +27,29 @@
       <section class="page" data-page="3"><div class="scale-legend"><span>Pilih satu jawaban untuk setiap pernyataan</span><div class="scale-mini"><b>STS</b><b>TS</b><b>N</b><b>S</b><b>SS</b></div></div><div id="performanceQuestions"></div><div class="consent"><span>✓</span> Dengan mengirim jawaban, Anda menyatakan telah mengisi kuesioner sesuai kondisi dan pendapat Anda.</div></section>
       <div class="nav-actions"><button type="button" class="btn btn-quiet" id="backBtn" hidden>← Kembali</button><span class="nav-spacer"></span><button type="button" class="btn btn-primary" id="nextBtn">Lanjutkan <span>→</span></button><button type="submit" class="btn btn-primary" id="submitBtn" hidden>Kirim Jawaban <span>✓</span></button></div>
     </form>
-    <section class="success" id="successPage" hidden><div class="success-art"><div class="success-check">✓</div><span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span></div><span class="eyebrow">PENGISIAN SELESAI</span><h2>Terima kasih!</h2><p>Jawaban Anda berhasil dikirim dan tersimpan. Partisipasi Anda sangat berarti bagi penelitian ini.</p><button class="btn btn-primary" id="homeBtn">Kembali ke Beranda</button></section>
+    <section class="success" id="successPage" hidden><div class="success-art success-scene" aria-label="Ilustrasi pegawai sedang mencatat jawaban">
+      <svg class="writing-character" viewBox="0 0 240 190" role="img" aria-hidden="true">
+        <ellipse cx="120" cy="169" rx="82" ry="10" fill="#cdb8e8" opacity=".45"/>
+        <rect x="26" y="116" width="188" height="12" rx="6" fill="#7542ae"/><path d="M48 128v34m144-34v34" stroke="#7542ae" stroke-width="8" stroke-linecap="round"/>
+        <rect x="142" y="73" width="57" height="43" rx="5" fill="#fff" stroke="#b99add" stroke-width="3" transform="rotate(5 142 73)"/>
+        <path d="M153 87l31 3m-32 7l27 3m-27 7l20 2" stroke="#c3a8e4" stroke-width="3" stroke-linecap="round"/>
+        <path class="character-body" d="M78 103c2-25 17-38 39-38s37 13 39 38l-5 17H82z" fill="#8b5bb8"/>
+        <path d="M92 112l-12 13m62-14l12 8" stroke="#f0b99a" stroke-width="12" stroke-linecap="round"/>
+        <path d="M91 52c0-23 13-36 30-36s30 13 30 36v19H91z" fill="#392052"/>
+        <ellipse cx="121" cy="52" rx="27" ry="30" fill="#f2c5a8"/>
+        <path d="M94 47c1-23 15-34 30-34 17 0 27 12 28 31-9-2-16-8-21-16-8 10-21 16-37 19" fill="#392052"/>
+        <circle cx="111" cy="53" r="2.5" fill="#392052"/><circle cx="131" cy="53" r="2.5" fill="#392052"/><path d="M114 65q7 6 14 0" fill="none" stroke="#b66e70" stroke-width="2" stroke-linecap="round"/>
+        <path class="writing-arm" d="M151 91q15 3 18 16l-12 7q-7-11-18-13" fill="none" stroke="#f2c5a8" stroke-width="10" stroke-linecap="round"/>
+        <path class="writing-pen" d="M170 104l12-18" stroke="#55239b" stroke-width="3.5" stroke-linecap="round"/><path d="M181 85l4-5 1 7z" fill="#d49b53"/>
+        <circle cx="192" cy="42" r="5" fill="#b99add"/><path d="M190 29v-7m10 20h7" stroke="#b99add" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="success-check">✓</div><span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span>
+    </div><span class="eyebrow">PENGISIAN SELESAI</span><h2>Terima kasih!</h2><p>Jawaban Anda berhasil dikirim dan tersimpan. Partisipasi Anda sangat berarti bagi penelitian ini.</p><button class="btn btn-primary" id="homeBtn">Kembali ke Beranda</button></section>
     <footer><span>© Kuesioner Penelitian</span><span>Dirancang untuk pengisian yang nyaman dan aman</span></footer>
   </main>
   <form name="survey-responses" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="hidden" name="form-name" value="survey-responses"><input name="gender"><input name="age"><input name="education"><input name="submitted_at">
+    <input type="hidden" name="form-name" value="survey-responses"><input name="bot-field"><input name="gender"><input name="age"><input name="education"><input name="submitted_at">
     <input name="submission_id">
-    <p hidden><label>Jangan diisi: <input name="bot-field"></label></p>
     <input name="P1"><input name="P2"><input name="P3"><input name="P4"><input name="P5"><input name="P6"><input name="P7"><input name="P8"><input name="P9"><input name="P10">
     <input name="P11"><input name="P12"><input name="P13"><input name="P14"><input name="P15"><input name="P16"><input name="P17"><input name="P18"><input name="P19"><input name="P20">
     <input name="P21"><input name="P22"><input name="P23"><input name="P24"><input name="P25"><input name="P26"><input name="P27"><input name="P28"><input name="P29"><input name="P30">

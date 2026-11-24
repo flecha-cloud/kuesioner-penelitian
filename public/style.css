@@ -3,3 +3,24 @@
 @media(max-width:680px){.topbar{height:65px;padding:0 18px}.progress-wrap{padding:0 18px;margin-bottom:14px}.shell{padding:0 16px}.hero{grid-template-columns:1fr .72fr;min-height:0;border-radius:18px;margin-bottom:20px}.hero-copy{padding:20px 4px 20px 18px}.hero h1{font-size:clamp(25px,7vw,32px);margin:8px 0}.hero p{font-size:11px;line-height:1.5}.hero .eyebrow{font-size:9px}.hero-note{font-size:9px;margin-top:10px}.hero-art{height:150px;justify-content:flex-end}.hero-art img{width:100%;object-position:center bottom;object-fit:contain}.page-head h2{font-size:22px}.page-number{font-size:34px}.field-card{padding:16px}.scale-legend{align-items:flex-start;gap:10px;flex-direction:column}.scale-mini{align-self:stretch;width:100%;margin-top:0}.question-row{grid-template-columns:1fr;gap:10px;padding:12px 13px}.question-text{font-size:12px}.likert{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;padding:1px 0}.likert label{font-size:10px;min-height:48px;padding:5px 1px;gap:3px}.likert label:last-child{grid-column:auto;max-width:none;justify-self:stretch}.likert .full-label{font-size:8px;line-height:1.1}.likert input{width:15px;height:15px}.group-head{font-size:12px;padding:11px 13px}.nav-actions{margin:16px 0 28px}.btn{min-height:45px;padding:0 17px}footer{gap:10px;line-height:1.4}footer span:last-child{text-align:right}.choice-grid.two{gap:7px}.choice{padding:9px;font-size:11px}}
 
 @media(max-width:380px){.hero{grid-template-columns:1fr .58fr}.hero-copy{padding-left:14px}.hero-art{height:132px}.likert label{min-height:45px}.likert .full-label{font-size:7px}.question-row{padding:11px 10px}.scale-legend{padding:11px 12px}}
+
+/* Animasi ringan untuk pilihan jawaban */
+.likert label{position:relative;isolation:isolate;transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease,box-shadow .18s ease;overflow:hidden;-webkit-tap-highlight-color:transparent}
+.likert label:has(input:checked){background:#eee4fb;box-shadow:0 3px 10px #5927a01c;animation:answer-pop .28s ease-out}
+.likert label:has(input:checked)::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at center,#fff9 0,transparent 68%);opacity:0;pointer-events:none;animation:answer-shine .42s ease-out}
+@keyframes answer-pop{0%{transform:scale(.94)}65%{transform:scale(1.045)}100%{transform:scale(1)}}
+@keyframes answer-shine{0%{opacity:.9;transform:scale(.65)}100%{opacity:0;transform:scale(1.3)}}
+/* Karakter vektor mencatat setelah pengiriman berhasil */
+.success-scene{display:flex;align-items:center;justify-content:center;width:min(100%,270px);height:190px;border-radius:22px;background:radial-gradient(ellipse at 50% 60%,#fff 0,#e8dcf8 72%);margin:0 auto 22px;position:relative;overflow:visible}
+.writing-character{width:230px;height:182px;overflow:visible;animation:character-enter .65s cubic-bezier(.2,.8,.2,1) both}
+.character-body{transform-origin:120px 100px;animation:body-bob 2.2s ease-in-out infinite}
+.writing-arm{transform-origin:151px 91px;animation:write-motion .65s ease-in-out infinite alternate}
+.writing-pen{transform-origin:170px 104px;animation:pen-motion .65s ease-in-out infinite alternate}
+.success-check{position:absolute;right:7px;bottom:8px;width:42px;height:42px;font-size:23px;border:4px solid #f5effc;animation:check-pop .55s .35s cubic-bezier(.2,.8,.2,1) both}
+@keyframes character-enter{from{opacity:0;transform:translateY(18px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes body-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+@keyframes write-motion{from{transform:rotate(-5deg)}to{transform:rotate(9deg)}}
+@keyframes pen-motion{from{transform:rotate(-7deg) translateY(1px)}to{transform:rotate(7deg) translateY(-2px)}}
+@keyframes check-pop{0%{opacity:0;transform:scale(.4)}75%{opacity:1;transform:scale(1.12)}100%{opacity:1;transform:scale(1)}}
+@media(max-width:380px){.success-scene{height:170px;width:245px}.writing-character{width:210px;height:165px}}
+@media(prefers-reduced-motion:reduce){.likert label,.likert label:has(input:checked),.likert label:has(input:checked)::after,.writing-character,.character-body,.writing-arm,.writing-pen,.success-check{animation:none!important;transition:none!important}}
