@@ -26,7 +26,7 @@ exports.handler = async (event) => {
   if(event.httpMethod!=='GET') return {statusCode:405,headers:{Allow:'GET'},body:'Method not allowed'};
   const password=event.headers['x-export-password'] || event.queryStringParameters?.key;
   if(!process.env.EXPORT_PASSWORD || password!==process.env.EXPORT_PASSWORD) return {statusCode:401,headers:{'Content-Type':'application/json'},body:JSON.stringify({error:'Kata sandi ekspor tidak valid.'})};
-  const token=process.env.NETLIFY_AUTH_TOKEN,siteId=process.env.NETLIFY_SITE_ID;
+  const token=process.env.NETLIFY_AUTH_TOKEN,siteId=process.env.SITE_ID || process.env.NETLIFY_SITE_ID;
   if(!token||!siteId)return {statusCode:500,headers:{'Content-Type':'application/json'},body:JSON.stringify({error:'Konfigurasi NETLIFY_AUTH_TOKEN atau NETLIFY_SITE_ID belum diisi di Netlify.'})};
   try{
     const headers={Authorization:`Bearer ${token}`,'Content-Type':'application/json'};
