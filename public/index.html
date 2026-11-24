@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#55239b"><meta name="description" content="Kuesioner penelitian motivasi kerja, disiplin kerja, dan kinerja pegawai.">
+  <title>Kuesioner Penelitian</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar"><a class="brand" href="#" aria-label="Kuesioner Penelitian"><span class="brand-mark">K</span><span>Kuesioner<br><b>Penelitian</b></span></a><div class="step-label" id="stepLabel">Langkah 1 dari 4</div></div>
+  <div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+  <main class="shell">
+    <section class="hero" id="hero">
+      <div class="hero-copy"><span class="eyebrow">PENELITIAN AKADEMIK</span><h1>Suara Anda<br><em>berarti.</em></h1><p>Pengaruh Motivasi Kerja dan Disiplin Kerja terhadap Kinerja Pegawai pada Kantor Dinas Kependudukan dan Pencatatan Sipil Kota Serang.</p><div class="hero-note"><span>✦</span> Isian singkat · 30 pernyataan · ± 5–7 menit</div></div>
+      <div class="hero-art"><img src="ilustrasi-pegawai.png" alt="Ilustrasi pegawai kantor" /></div>
+    </section>
+    <div class="page-head"><div><span class="eyebrow" id="pageEyebrow">BAGIAN 01 / 04</span><h2 id="pageTitle">Identitas Responden</h2><p id="pageDesc">Mohon lengkapi informasi berikut sebelum memulai.</p></div><div class="page-number" id="pageNumber">01</div></div>
+    <div id="alert" class="alert" role="alert" hidden></div>
+    <form id="surveyForm" novalidate>
+      <section class="page active" data-page="0">
+        <div class="privacy"><span class="privacy-icon">♧</span><div><b>Privasi dan kerahasiaan</b><p>Data digunakan hanya untuk keperluan penelitian akademik. Identitas dan jawaban Anda dijaga kerahasiaannya serta dianalisis secara keseluruhan.</p></div></div>
+        <div class="field-card"><label class="field-label">Jenis kelamin <i>*</i></label><div class="choice-grid two"><label class="choice"><input type="radio" name="gender" value="Laki-laki"><span>Laki-laki</span></label><label class="choice"><input type="radio" name="gender" value="Perempuan"><span>Perempuan</span></label></div></div>
+        <div class="field-card"><label class="field-label" for="age">Usia <i>*</i></label><select id="age" name="age"><option value="">Pilih rentang usia</option><option>Di bawah 25 tahun</option><option>25–34 tahun</option><option>35–44 tahun</option><option>45–54 tahun</option><option>55 tahun ke atas</option></select></div>
+        <div class="field-card"><label class="field-label" for="education">Pendidikan <i>*</i></label><select id="education" name="education"><option value="">Pilih pendidikan terakhir</option><option>SMA/SMK</option><option>Diploma (D1–D3)</option><option>Sarjana (S1)</option><option>Magister (S2)</option><option>Doktor (S3)</option><option>Lainnya</option></select></div>
+      </section>
+      <section class="page" data-page="1"><div class="scale-legend"><span>Pilih satu jawaban untuk setiap pernyataan</span><div class="scale-mini"><b>STS</b><b>TS</b><b>N</b><b>S</b><b>SS</b></div></div><div id="motivationQuestions"></div></section>
+      <section class="page" data-page="2"><div class="scale-legend"><span>Pilih satu jawaban untuk setiap pernyataan</span><div class="scale-mini"><b>STS</b><b>TS</b><b>N</b><b>S</b><b>SS</b></div></div><div id="disciplineQuestions"></div></section>
+      <section class="page" data-page="3"><div class="scale-legend"><span>Pilih satu jawaban untuk setiap pernyataan</span><div class="scale-mini"><b>STS</b><b>TS</b><b>N</b><b>S</b><b>SS</b></div></div><div id="performanceQuestions"></div><div class="consent"><span>✓</span> Dengan mengirim jawaban, Anda menyatakan telah mengisi kuesioner sesuai kondisi dan pendapat Anda.</div></section>
+      <div class="nav-actions"><button type="button" class="btn btn-quiet" id="backBtn" hidden>← Kembali</button><span class="nav-spacer"></span><button type="button" class="btn btn-primary" id="nextBtn">Lanjutkan <span>→</span></button><button type="submit" class="btn btn-primary" id="submitBtn" hidden>Kirim Jawaban <span>✓</span></button></div>
+    </form>
+    <section class="success" id="successPage" hidden><div class="success-art"><div class="success-check">✓</div><span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span></div><span class="eyebrow">PENGISIAN SELESAI</span><h2>Terima kasih!</h2><p>Jawaban Anda berhasil dikirim dan tersimpan. Partisipasi Anda sangat berarti bagi penelitian ini.</p><button class="btn btn-primary" id="homeBtn">Kembali ke Beranda</button></section>
+    <footer><span>© Kuesioner Penelitian</span><span>Dirancang untuk pengisian yang nyaman dan aman</span></footer>
+  </main>
+  <form name="survey-responses" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="survey-responses"><input name="bot-field"><input name="gender"><input name="age"><input name="education"><input name="submitted_at">
+    <input name="submission_id">
+    <input name="P1"><input name="P2"><input name="P3"><input name="P4"><input name="P5"><input name="P6"><input name="P7"><input name="P8"><input name="P9"><input name="P10">
+    <input name="P11"><input name="P12"><input name="P13"><input name="P14"><input name="P15"><input name="P16"><input name="P17"><input name="P18"><input name="P19"><input name="P20">
+    <input name="P21"><input name="P22"><input name="P23"><input name="P24"><input name="P25"><input name="P26"><input name="P27"><input name="P28"><input name="P29"><input name="P30">
+  </form>
+  <script src="script.js"></script>
+</body></html>
