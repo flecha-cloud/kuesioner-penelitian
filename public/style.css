@@ -70,3 +70,23 @@
 @media(max-width:420px){.fullstage{padding:20px 18px}.stage-character{width:min(78vw,270px);height:min(70vw,240px)}.stage-content p{font-size:13px}.stage-meta{gap:6px;margin:17px 0 20px}.stage-meta span{font-size:9px;padding:8px 9px}.stage-button{width:min(100%,300px)}.page-illustration{min-height:84px;padding:4px 12px}.page-illustration svg{height:90px;width:170px}.scene-caption{font-size:10px;max-width:112px}}
 @media(prefers-reduced-motion:reduce){.fullstage *,.page-illustration svg{animation:none!important;transition:none!important}}
 .fullstage.stage-exit{animation:stage-exit .38s ease forwards;pointer-events:none}@keyframes stage-exit{to{opacity:0;transform:scale(1.025)}}
+
+
+/* Ilustrasi vector baru: satu keluarga karakter, warna dan proporsi konsisten */
+.hero-art img{width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 8px 10px #4b28701a)}
+.stage-character{width:min(78vw,430px);height:min(62vh,390px);max-height:390px;margin:10px auto 4px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 16px 20px #4b267022)}
+.stage-character img{display:block;width:100%;height:100%;object-fit:contain;border-radius:28px;mix-blend-mode:multiply;animation:character-float 2.8s ease-in-out infinite}
+.welcome-character img{animation:character-float 2.8s ease-in-out infinite}
+.celebration-character{width:min(82vw,470px);height:min(58vh,390px)}
+.celebration-character img{animation:happy-bounce .75s cubic-bezier(.3,.7,.25,1) infinite alternate;mix-blend-mode:multiply}
+@keyframes character-float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}
+@keyframes happy-bounce{0%{transform:translateY(7px) rotate(-2deg) scale(.98)}100%{transform:translateY(-12px) rotate(2deg) scale(1.025)}}
+.page-illustration{min-height:118px;background:linear-gradient(110deg,#f3ecfc,#fff 72%)}
+.page-illustration img{height:112px;width:190px;max-width:58%;object-fit:contain;object-position:center;mix-blend-mode:multiply;filter:drop-shadow(0 5px 7px #4b267018);animation:character-float 3.2s ease-in-out infinite}
+.page-illustration .scene-caption{font-weight:800;color:#65408e;letter-spacing:.1px}
+.success-art.success-scene{width:min(100%,360px);height:220px;border-radius:22px;background:linear-gradient(140deg,#eee5fb,#fff);overflow:visible;margin:0 auto 18px}
+.success-illustration{width:100%;height:100%;object-fit:contain;border-radius:20px;mix-blend-mode:multiply;animation:happy-bounce .9s ease-in-out infinite alternate}
+.success-check{position:absolute;right:12px;top:4px;width:54px;height:54px;font-size:28px;border:4px solid white;animation:check-pop .65s .2s both}
+@keyframes check-pop{0%{transform:scale(0) rotate(-30deg)}75%{transform:scale(1.18) rotate(8deg)}100%{transform:scale(1) rotate(0)}}
+@media(max-width:420px){.stage-character{width:min(88vw,350px);height:min(48vh,300px)}.celebration-character{height:min(48vh,300px)}.page-illustration{min-height:98px}.page-illustration img{height:94px;width:158px}.success-art.success-scene{height:190px}}
+@media(prefers-reduced-motion:reduce){.stage-character img,.page-illustration img,.success-illustration{animation:none!important}}
