@@ -102,3 +102,23 @@
 @keyframes modern-sway{0%,100%{transform:translate3d(0,2px,0) rotate(-.5deg)}50%{transform:translate3d(0,-5px,0) rotate(.6deg)}}
 @keyframes modern-celebrate{0%,100%{transform:translate3d(0,5px,0) rotate(-1deg) scale(.99)}45%{transform:translate3d(0,-13px,0) rotate(1.2deg) scale(1.025)}70%{transform:translate3d(0,-8px,0) rotate(-.5deg) scale(1.01)}}
 @media(prefers-reduced-motion:reduce){.stage-character img,.welcome-character img,.page-illustration img,.success-illustration{animation:none!important;will-change:auto}}
+
+
+/* Gerakan karakter modern: lebih organik, lembut, dan tidak patah-patah */
+.stage-character img,.welcome-character img,.page-illustration img,.success-illustration{transform-origin:50% 82%;}
+.welcome-character img,.stage-character img{animation:character-drift 5.8s cubic-bezier(.45,0,.55,1) infinite!important;}
+.page-illustration img{animation:character-sway 6.2s cubic-bezier(.45,0,.55,1) infinite!important;}
+.celebration-character img,.success-illustration{animation:celebration-flow 1.9s cubic-bezier(.33,1,.68,1) infinite!important;}
+@keyframes character-drift{0%,100%{transform:translate3d(0,2px,0) rotate(-.7deg)}50%{transform:translate3d(0,-10px,0) rotate(.8deg)}}
+@keyframes character-sway{0%,100%{transform:translate3d(0,1px,0) rotate(-.4deg) scale(1)}50%{transform:translate3d(0,-5px,0) rotate(.55deg) scale(1.012)}}
+@keyframes celebration-flow{0%,100%{transform:translate3d(0,5px,0) rotate(-1deg) scale(.99)}38%{transform:translate3d(0,-15px,0) rotate(1.2deg) scale(1.025)}68%{transform:translate3d(0,-7px,0) rotate(-.5deg) scale(1.01)}}
+@media(prefers-reduced-motion:reduce){.stage-character img,.welcome-character img,.page-illustration img,.success-illustration{animation:none!important}}
+
+/* SVG scene animation: limbs and props move independently inside each illustration */
+.hero-art img,.stage-character img,.page-illustration img,.success-illustration{mix-blend-mode:multiply;filter:none;animation:none!important;transform:none!important;will-change:auto;}
+.stage-character{width:min(88vw,500px);height:min(52vh,360px)}
+.celebration-character{width:min(92vw,540px);height:min(54vh,380px)}
+.page-illustration img{width:min(62%,260px);height:140px;object-fit:contain}
+.success-art.success-scene{background:transparent}
+@media(max-width:420px){.stage-character{height:min(43vh,270px)}.celebration-character{height:min(45vh,285px)}.page-illustration img{height:112px;width:58%}}
+@media(prefers-reduced-motion:reduce){.hero-art img,.stage-character img,.page-illustration img,.success-illustration{animation:none!important}}

@@ -11,7 +11,7 @@
     <div class="stage-confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="stage-content">
       <span class="stage-kicker">SELAMAT DATANG</span>
-      <div class="stage-character welcome-character" aria-hidden="true"><img src="vector-sambutan.webp" alt="" /></div>
+      <div class="stage-character welcome-character" aria-hidden="true"><img src="vector-sambutan.svg" alt="" /></div>
       <h1>Halo, selamat datang!</h1>
       <p>Terima kasih sudah bersedia berpartisipasi. Yuk, bantu penelitian ini dengan mengisi kuesioner secara jujur dan sesuai pendapat Anda.</p>
       <div class="stage-meta"><span>✦ 30 pernyataan</span><span>◷ 5–7 menit</span><span>♡ Data dirahasiakan</span></div>
@@ -24,7 +24,7 @@
     <div class="celebration-confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="stage-content celebration-content">
       <span class="stage-kicker">YEAY, BERHASIL TERKIRIM!</span>
-      <div class="stage-character celebration-character" aria-hidden="true"><img src="vector-sukses.webp" alt="" /></div>
+      <div class="stage-character celebration-character" aria-hidden="true"><img src="vector-sukses.svg" alt="" /></div>
       <h1>Jawaban terkirim!</h1>
       <p>Terima kasih banyak atas partisipasi Anda. Kontribusi Anda sangat berarti untuk penelitian ini.</p>
       <div class="celebration-stamp">✓ TERSIMPAN DENGAN AMAN</div>
@@ -37,24 +37,24 @@
   <main class="shell">
     <section class="hero" id="hero">
       <div class="hero-copy"><span class="eyebrow">PENELITIAN AKADEMIK</span><h1>Kuesioner<br><em>Penelitian</em></h1><p>Pengaruh Motivasi Kerja dan Disiplin Kerja terhadap Kinerja Pegawai pada Kantor Dinas Kependudukan dan Pencatatan Sipil Kota Serang.</p><div class="hero-note"><span>✦</span> Isian singkat · 30 pernyataan · ± 5–7 menit</div></div>
-      <div class="hero-art"><img src="vector-sambutan.webp" alt="Ilustrasi dua pegawai menyambut responden" /></div>
+      <div class="hero-art"><img src="vector-sambutan.svg" alt="Ilustrasi dua karakter menyambut responden" /></div>
     </section>
     <div class="page-head"><div><span class="eyebrow" id="pageEyebrow">BAGIAN 01 / 04</span><h2 id="pageTitle">Identitas Responden</h2><p id="pageDesc">Mohon lengkapi informasi berikut sebelum memulai.</p></div><div class="page-number" id="pageNumber">01</div></div>
     <div id="alert" class="alert" role="alert" hidden></div>
     <form id="surveyForm" novalidate>
       <section class="page active" data-page="0">
-        <div class="page-illustration identity-scene" aria-hidden="true"><span class="scene-caption">Kenalan dulu, yuk!</span><img src="vector-identitas.webp" alt="Ilustrasi pegawai memperkenalkan diri" loading="lazy" /></div>
+        <div class="page-illustration identity-scene" aria-hidden="true"><span class="scene-caption">Kenalan dulu, yuk!</span><img src="vector-identitas.svg" alt="Ilustrasi karakter perempuan memperkenalkan diri" loading="lazy" /></div>
         <div class="privacy"><span class="privacy-icon">♧</span><div><b>Privasi dan kerahasiaan</b><p>Data digunakan hanya untuk keperluan penelitian akademik. Identitas dan jawaban Anda dijaga kerahasiaannya serta dianalisis secara keseluruhan.</p></div></div>
         <div class="field-card"><label class="field-label">Jenis kelamin <i>*</i></label><div class="choice-grid two"><label class="choice"><input type="radio" name="gender" value="Laki-laki"><span>Laki-laki</span></label><label class="choice"><input type="radio" name="gender" value="Perempuan"><span>Perempuan</span></label></div></div>
         <div class="field-card"><label class="field-label" for="age">Usia <i>*</i></label><select id="age" name="age"><option value="">Pilih rentang usia</option><option>Di bawah 25 tahun</option><option>25–34 tahun</option><option>35–44 tahun</option><option>45–54 tahun</option><option>55 tahun ke atas</option></select></div>
         <div class="field-card"><label class="field-label" for="education">Pendidikan <i>*</i></label><select id="education" name="education"><option value="">Pilih pendidikan terakhir</option><option>SMA/SMK</option><option>Diploma (D1–D3)</option><option>Sarjana (S1)</option><option>Magister (S2)</option><option>Doktor (S3)</option><option>Lainnya</option></select></div>
       </section>
-      <section class="page" data-page="1"><div class="page-illustration motivation-scene" aria-hidden="true"><span class="scene-caption">Semangat dalam bekerja</span><img src="vector-motivasi.webp" alt="Ilustrasi pegawai bekerja dengan semangat" loading="lazy" /></div><div class="scale-legend"><span>Pilih satu jawaban untuk setiap pernyataan</span><div class="scale-mini"><b>STS</b><b>TS</b><b>N</b><b>S</b><b>SS</b></div></div><div id="motivationQuestions"></div></section>
-      <section class="page" data-page="2"><div class="page-illustration discipline-scene" aria-hidden="true"><span class="scene-caption">Tetap tertib dan konsisten</span><img src="vector-disiplin.webp" alt="Ilustrasi pegawai memeriksa daftar tugas" loading="lazy" /></div><div class="scale-legend"><span>Pilih satu jawaban untuk setiap pernyataan</span><div class="scale-mini"><b>STS</b><b>TS</b><b>N</b><b>S</b><b>SS</b></div></div><div id="disciplineQuestions"></div></section>
-      <section class="page" data-page="3"><div class="page-illustration performance-scene" aria-hidden="true"><span class="scene-caption">Tunjukkan hasil terbaik</span><img src="vector-kinerja.webp" alt="Ilustrasi pegawai melihat hasil pekerjaan" loading="lazy" /></div><div class="scale-legend"><span>Pilih satu jawaban untuk setiap pernyataan</span><div class="scale-mini"><b>STS</b><b>TS</b><b>N</b><b>S</b><b>SS</b></div></div><div id="performanceQuestions"></div><div class="consent"><span>✓</span> Dengan mengirim jawaban, Anda menyatakan telah mengisi kuesioner sesuai kondisi dan pendapat Anda.</div></section>
+      <section class="page" data-page="1"><div class="page-illustration motivation-scene" aria-hidden="true"><span class="scene-caption">Semangat dalam bekerja</span><img src="vector-motivasi.svg" alt="Ilustrasi karakter perempuan bekerja dengan semangat" loading="lazy" /></div><div class="scale-legend"><span>Pilih satu jawaban untuk setiap pernyataan</span><div class="scale-mini"><b>STS</b><b>TS</b><b>N</b><b>S</b><b>SS</b></div></div><div id="motivationQuestions"></div></section>
+      <section class="page" data-page="2"><div class="page-illustration discipline-scene" aria-hidden="true"><span class="scene-caption">Tetap tertib dan konsisten</span><img src="vector-disiplin.svg" alt="Ilustrasi karakter perempuan memeriksa daftar tugas" loading="lazy" /></div><div class="scale-legend"><span>Pilih satu jawaban untuk setiap pernyataan</span><div class="scale-mini"><b>STS</b><b>TS</b><b>N</b><b>S</b><b>SS</b></div></div><div id="disciplineQuestions"></div></section>
+      <section class="page" data-page="3"><div class="page-illustration performance-scene" aria-hidden="true"><span class="scene-caption">Tunjukkan hasil terbaik</span><img src="vector-kinerja.svg" alt="Ilustrasi karakter perempuan melihat hasil pekerjaan" loading="lazy" /></div><div class="scale-legend"><span>Pilih satu jawaban untuk setiap pernyataan</span><div class="scale-mini"><b>STS</b><b>TS</b><b>N</b><b>S</b><b>SS</b></div></div><div id="performanceQuestions"></div><div class="consent"><span>✓</span> Dengan mengirim jawaban, Anda menyatakan telah mengisi kuesioner sesuai kondisi dan pendapat Anda.</div></section>
       <div class="nav-actions"><button type="button" class="btn btn-quiet" id="backBtn" hidden>← Kembali</button><span class="nav-spacer"></span><button type="button" class="btn btn-primary" id="nextBtn">Lanjutkan <span>→</span></button><button type="submit" class="btn btn-primary" id="submitBtn" hidden>Kirim Jawaban <span>✓</span></button></div>
     </form>
-    <section class="success" id="successPage" hidden><div class="success-art success-scene" aria-label="Ilustrasi pegawai sedang mencatat jawaban"><img class="success-illustration" src="vector-sukses.webp" alt="Ilustrasi pegawai merayakan keberhasilan" loading="lazy" /><div class="success-check">✓</div><span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span>
+    <section class="success" id="successPage" hidden><div class="success-art success-scene" aria-label="Ilustrasi dua karakter merayakan keberhasilan"><img class="success-illustration" src="vector-sukses.svg" alt="Ilustrasi dua karakter merayakan keberhasilan" loading="lazy" /><div class="success-check">✓</div><span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span>
     </div><span class="eyebrow">PENGISIAN SELESAI</span><h2>Terima kasih!</h2><p>Jawaban Anda berhasil dikirim dan tersimpan. Partisipasi Anda sangat berarti bagi penelitian ini.</p><button class="btn btn-primary" id="homeBtn">Kembali ke Beranda</button></section>
     <footer><span>© Kuesioner Penelitian</span><span>Dirancang untuk pengisian yang nyaman dan aman</span></footer>
   </main>
