@@ -5,7 +5,8 @@
   "description": "Website kuesioner penelitian dengan Cloudflare Worker, D1, dan ekspor Excel.",
   "dependencies": {
     "exceljs": "^4.4.0",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "chartsheet": "^0.3.2"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
