@@ -2,6 +2,14 @@
 <style>
 .float{animation:float 3.4s ease-in-out infinite}.walkA{transform-box:fill-box;transform-origin:top center;animation:walk 1.05s ease-in-out infinite alternate}.wave{transform-box:fill-box;transform-origin:top center;animation:wave .72s ease-in-out infinite alternate}.hair{transform-box:fill-box;transform-origin:top center;animation:hair 2.2s ease-in-out infinite alternate}.spark{animation:twinkle 1.3s ease-in-out infinite alternate}.shadow{animation:shadow 1.4s ease-in-out infinite alternate}
 @keyframes float{50%{transform:translateY(-8px)}}@keyframes walk{to{transform:rotate(8deg)}}@keyframes wave{to{transform:rotate(22deg)}}@keyframes hair{to{transform:rotate(3deg)}}@keyframes twinkle{to{opacity:.25;transform:scale(.7) rotate(18deg)}}@keyframes shadow{to{transform:scaleX(.82);opacity:.35}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+
+/* Animasi halus: karakter tetap diam, hanya aksen latar yang bergerak. */
+.float,.walkA,.hair{animation:none!important;transform:none!important}
+.spark{animation:soft-twinkle 2.8s ease-in-out infinite alternate!important;transform-origin:center}
+.shadow{animation:soft-shadow 3.8s ease-in-out infinite alternate!important}
+@keyframes soft-twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.88)}}
+@keyframes soft-shadow{to{transform:scaleX(.94);opacity:.65}}
+
 </style>
 <ellipse cx="385" cy="390" rx="310" ry="22" fill="#D9D0FF" class="shadow"/><path d="M66 310Q5 150 140 68Q255 0 390 62Q560 -5 680 125Q790 250 675 360H95Z" fill="#EEE9FF"/><g fill="#F8C84B" class="spark"><path d="M104 93l8 20 20 8-20 8-8 20-8-20-20-8 20-8Z"/><path d="M654 88l6 15 15 6-15 6-6 15-6-15-15-6 15-6Z"/></g><g class="float" transform="translate(95 70)">
 <!-- left youth: cropped purple hair, blue top, wide cream trousers -->
