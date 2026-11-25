@@ -1,0 +1,34 @@
+PANDUAN CLOUDFLARE WORKERS + D1
+
+Perubahan:
+- Desain, identitas responden, dan 30 pernyataan dipertahankan.
+- Pengiriman jawaban sekarang POST ke /api/submit.
+- src/index.js menyimpan jawaban ke tabel D1 melalui binding bernama DB.
+- File Netlify lama tidak dipakai untuk pengiriman.
+
+PENTING: Setelah file ini masuk ke GitHub, project Cloudflare harus dideploy sebagai Worker dengan konfigurasi wrangler.jsonc, bukan sebagai static-assets-only Worker.
+
+Pengaturan Cloudflare Workers Builds:
+- Root directory: /
+- Build command: npx wrangler deploy
+- Deploy command: kosongkan jika dashboard memisahkan build/deploy; jika diminta deploy command, gunakan npx wrangler deploy.
+- Jangan isi output directory "public" untuk mode Worker ini.
+
+Setelah Worker berhasil ter-deploy:
+1. Buka Worker kuesioner-penelitian > Settings > Bindings.
+2. Tambahkan D1 database binding:
+   Variable name: DB
+   D1 database: kuesioner-db
+3. Save dan redeploy.
+
+Database harus memiliki tabel responses dengan kolom:
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+submission_id TEXT UNIQUE,
+submitted_at TEXT,
+gender TEXT,
+age TEXT,
+education TEXT,
+P1 sampai P30 TEXT,
+created_at TEXT DEFAULT CURRENT_TIMESTAMP.
+
+Jika tabel sudah dibuat menggunakan SQL sebelumnya, tidak perlu dibuat ulang.
