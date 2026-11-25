@@ -1,4 +1,159 @@
-<!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Ekspor Data — Kuesioner Penelitian</title><link rel="stylesheet" href="style.css"><style>.export-box{max-width:540px;margin:8vh auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}.export-box h1{font:800 25px Manrope;color:var(--deep)}.export-box p{font-size:13px;line-height:1.6;color:var(--muted)}.export-box input{width:100%;height:48px;border:1px solid var(--line);border-radius:10px;padding:0 13px;font-size:14px;margin:8px 0 14px}.export-box .btn{width:100%}.status{margin-top:14px;font-size:12px;line-height:1.5;color:var(--muted)}.back{display:inline-block;margin-top:18px;color:var(--purple);font-size:12px}</style></head><body><div class="topbar"><a class="brand" href="index.html"><span class="brand-mark">K</span><span>Kuesioner<br><b>Penelitian</b></span></a><span class="step-label">Akses pengelola</span></div><main class="shell"><section class="export-box"><span class="eyebrow">PENGELOLA PENELITIAN</span><h1>Unduh data responden</h1><p>Masukkan kata sandi ekspor yang telah Anda atur di environment variables Netlify. File Excel berisi data asli, rekapitulasi, dan diagram.</p><form id="exportForm"><label class="field-label" for="password">Kata sandi ekspor</label><input id="password" type="password" autocomplete="current-password" required placeholder="Masukkan kata sandi"><button class="btn btn-primary" id="downloadBtn">Unduh Excel (.xlsx)</button></form><div class="status" id="status" role="status"></div><a class="back" href="index.html">← Kembali ke halaman kuesioner</a></section></main><script>
-const form=document.getElementById('exportForm'),btn=document.getElementById('downloadBtn'),status=document.getElementById('status');form.addEventListener('submit',async e=>{e.preventDefault();btn.disabled=true;btn.textContent='Menyiapkan Excel…';status.textContent='Mengambil data responden dan menyusun workbook.';try{const r=await fetch('/.netlify/functions/export-excel',{headers:{'x-export-password':document.getElementById('password').value}});if(!r.ok){let msg='Ekspor gagal.';try{msg=(await r.json()).error||msg}catch{}throw new Error(msg)}const blob=await r.blob();const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`hasil-kuesioner-${new Date().toISOString().slice(0,10)}.xlsx`;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);status.textContent='File Excel berhasil dibuat dan diunduh.'}catch(err){status.textContent=err.message+' Periksa pengaturan Netlify dan coba kembali.'}finally{btn.disabled=false;btn.textContent='Unduh Excel (.xlsx)'}});
-</script></body></html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Ekspor Data — Kuesioner Penelitian</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.export-box {
+  max-width: 540px;
+  margin: 8vh auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+.export-box h1 {
+  font: 800 25px Manrope;
+  color: var(--deep);
+}
+.export-box p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.export-box input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0 13px;
+  font-size: 14px;
+  margin: 8px 0 14px;
+}
+.export-box .btn { width: 100%; }
+.status {
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.back {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--purple);
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">K</span>
+    <span>Kuesioner<br><b>Penelitian</b></span>
+  </a>
+  <span class="step-label">Akses pengelola</span>
+</div>
+
+<main class="shell">
+<section class="export-box">
+  <span class="eyebrow">PENGELOLA PENELITIAN</span>
+  <h1>Unduh data responden</h1>
+
+  <p>
+    Masukkan kata sandi ekspor Cloudflare.
+    File Excel berisi data asli responden dan rekapitulasi
+    jawaban untuk 30 pertanyaan.
+  </p>
+
+  <form id="exportForm">
+    <label class="field-label" for="password">
+      Kata sandi ekspor
+    </label>
+
+    <input
+      id="password"
+      type="password"
+      autocomplete="current-password"
+      required
+      placeholder="Masukkan kata sandi"
+    >
+
+    <button class="btn btn-primary" id="downloadBtn" type="submit">
+      Unduh Excel (.xlsx)
+    </button>
+  </form>
+
+  <div class="status" id="status" role="status"></div>
+
+  <a class="back" href="index.html">
+    ← Kembali ke halaman kuesioner
+  </a>
+</section>
+</main>
+
+<script>
+const form = document.getElementById('exportForm');
+const btn = document.getElementById('downloadBtn');
+const status = document.getElementById('status');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  btn.disabled = true;
+  btn.textContent = 'Menyiapkan Excel…';
+  status.textContent = 'Mengambil data responden dan menyusun workbook.';
+
+  try {
+    const response = await fetch('/api/export-excel', {
+      headers: {
+        'x-export-password':
+          document.getElementById('password').value
+      }
+    });
+
+    if (!response.ok) {
+      let message = 'Ekspor gagal.';
+
+      try {
+        message = (await response.json()).error || message;
+      } catch {}
+
+      throw new Error(message);
+    }
+
+    const blob = await response.blob();
+    const objectUrl = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = objectUrl;
+    link.download =
+      'hasil-kuesioner-' +
+      new Date().toISOString().slice(0, 10) +
+      '.xlsx';
+
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+
+    status.textContent = 'File Excel berhasil dibuat dan diunduh.';
+
+  } catch (error) {
+    status.textContent = error.message;
+
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Unduh Excel (.xlsx)';
+  }
+});
+</script>
+
+</body>
+</html>
