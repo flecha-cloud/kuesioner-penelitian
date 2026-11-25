@@ -133,3 +133,11 @@
 .celebration-stage .stage-content>*:nth-child(2){animation-delay:.08s}.celebration-stage .stage-content>*:nth-child(3){animation-delay:.18s}.celebration-stage .stage-content>*:nth-child(4){animation-delay:.28s}
 @keyframes celebrate-in{0%{opacity:0;transform:translateY(28px) scale(.92)}70%{opacity:1;transform:translateY(-5px) scale(1.02)}100%{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.fullstage .stage-character,.celebration-stage .stage-content>*{animation:none!important}}
+
+/* FINAL MOTION OVERRIDE: illustrations stay still; only SVG sub-parts/background accents move. */
+.hero-art img,.stage-character img,.page-illustration img,.success-illustration{animation:none!important;transform:none!important;transition:none!important;will-change:auto!important;}
+.welcome-character,.celebration-character{animation:none!important;transform:none!important;}
+.page-illustration{overflow:hidden;}
+.fullstage .stage-character{animation:stage-art-arrive .75s cubic-bezier(.2,.75,.25,1) both;}
+@keyframes stage-art-arrive{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.fullstage .stage-character{animation:none!important}.hero-art img,.stage-character img,.page-illustration img,.success-illustration{animation:none!important}}

@@ -1,15 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 360" role="img" aria-label="Anak muda bekerja dengan semangat">
-<style>.typing{transform-box:fill-box;transform-origin:top center;animation:type .28s ease-in-out infinite alternate}.head{transform-box:fill-box;transform-origin:bottom center;animation:look 2s ease-in-out infinite alternate}.spark{animation:spark 1s ease-in-out infinite alternate}.paper{animation:paper .7s ease-in-out infinite alternate}@keyframes type{to{transform:translateY(5px) rotate(2deg)}}@keyframes look{to{transform:rotate(3deg)}}@keyframes spark{to{opacity:.2;transform:scale(.65)}}@keyframes paper{to{transform:translateY(-5px) rotate(2deg)}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}
-/* Tubuh dan kepala tetap diam; tangan mengetik bergerak sangat kecil. */
-.head{animation:none!important;transform:none!important}
-.typing{transform-box:fill-box;transform-origin:top center;animation:gentle-type .48s ease-in-out infinite alternate!important}
-.paper{animation:paper-breathe 3.4s ease-in-out infinite alternate!important}
-.spark{animation:soft-twinkle 2.6s ease-in-out infinite alternate!important}
-@keyframes gentle-type{to{transform:translateY(1.5px) rotate(.6deg)}}
-@keyframes paper-breathe{to{transform:translateY(-1px) rotate(.4deg)}}
-@keyframes soft-twinkle{to{opacity:.45;transform:scale(.9)}}
-
-</style>
+<style>.head{animation:none!important;transform:none!important}.typing{transform-box:fill-box;transform-origin:top center;animation:soft-type .42s ease-in-out infinite alternate}.paper{transform-box:fill-box;transform-origin:center;animation:paper-shift 3.8s ease-in-out infinite alternate}.spark{animation:soft-twinkle 3s ease-in-out infinite alternate}@keyframes soft-type{to{transform:translateY(1px)}}@keyframes paper-shift{to{transform:translateY(-1px)}}@keyframes soft-twinkle{to{opacity:.4}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}</style>
 <path d="M30 285Q160 235 290 260T670 260v75H30Z" fill="#EDE7FF"/><path d="M125 75l10 25 25 10-25 10-10 25-10-25-25-10 25-10Z M590 75l8 19 19 8-19 8-8 19-8-19-19-8 19-8Z" fill="#F4C743" class="spark"/>
 <!-- desk and laptop --> <path d="M280 250h330l-20 15H265Z" fill="#F2C54A"/><path d="M390 250V300m165-50v50" stroke="#49316C" stroke-width="10"/><path d="M385 245V120q0-10 12-10h150q10 0 10 10v125Z" fill="#4D3B7C"/><rect x="400" y="125" width="143" height="104" rx="5" fill="#B9A5EC"/><path d="M470 245h95l30 12H445Z" fill="#34234D"/>
 <!-- seated person --> <g transform="translate(270 300)"><path d="M-25-80l5 80 74 18 25-18-51-35-4-45Z" fill="#F4EBDD"/><path d="M-12-62l-22 68 33 10 38-72" fill="#4F79BD"/><path d="M-43 0h43l-8 12h-42Z" fill="#34234D"/><path d="M-30-155q40-23 79 0l16 79q-54 27-112 0Z" fill="#F0C74B"/><path d="M-26-145l-40 47m105-46 44 44" stroke="#F0B18F" stroke-width="21" stroke-linecap="round"/><g class="typing" stroke="#F0B18F" stroke-width="17" stroke-linecap="round"><path d="M-66-98l28 42 35 4"/><path d="M83-101l-24 43-25 5"/></g><g class="head"><path d="M-25-226q38-29 69 4l-4 64q-25 25-52 0Q-36-185-25-226Z" fill="#F0B18F"/><path d="M-33-212q-4-54 43-55 41 2 45 48l-17-7q-22-24-49-3l-18 29Z" fill="#332345"/><path d="M-5-190h3m25 0h3m-20 16q9 8 18-1" stroke="#332345" stroke-width="4" stroke-linecap="round"/></g></g></svg>
